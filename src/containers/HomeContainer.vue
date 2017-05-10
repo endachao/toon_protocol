@@ -1,6 +1,6 @@
 <template>
   <div class="HomeContainer">
-    <HomeComponent/>
+    <HomeComponent :buttonList="homeList"/>
   </div>
 </template>
 
@@ -10,7 +10,23 @@
   export default {
     name: 'HomeContainer',
     data () {
-      return {}
+      let homeList = [
+        {
+          name: 'MWAP  模块',
+          route: {name: 'wap'}
+        },
+        {
+          name: '名片列表',
+          route: {name: 'card'}
+        },
+        {
+          name: '支付',
+          route: {name: 'pay'}
+        }
+      ];
+      return {
+        homeList: homeList
+      }
     },
     components: {
       HomeComponent
