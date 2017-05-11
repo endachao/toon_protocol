@@ -6,15 +6,14 @@ import Vue from 'vue'
 class ToonProtocol {
 
   constructor (path, params, isHttps = false) {
-    this.path = path + '?params=' + JSON.stringify(params)
     this.params = params
-    // this.params.flagId = this.generateFlagId()
-    this.params.flagId = '123'
+    this.params.flagId = this.generateFlagId()
     this.resultUrl = this.generateResultUrl(isHttps)
+    this.path = path + '?params=' + JSON.stringify(this.params)
   }
 
   generateFlagId () {
-    return new Date().getTime() + Math.random()
+    return new Date().getTime()
   }
 
   generateResultUrl (isHttps) {
@@ -23,18 +22,14 @@ class ToonProtocol {
 
   async send () {
     window.location.href = this.path
-    let params = 'params={"flagId":' + this.params.flagId + '}'
-    alert(this.path)
-    alert(params)
-    alert(this.resultUrl)
-    return await Vue.http.post(this.resultUrl, 'params={"flagId":"123"}').then((response) => {
+    // parseInt(this.params.flagId)
+    return await Vue.http.post(this.resultUrl, 'params={"flagId":' + parseInt(this.params.flagId) + '}').then((response) => {
       console.log(response)
-      alert(JSON.stringify(response))
-      return response
+      alert('success')
+      return response.body
     }, (response) => {
-      alert('失败')
+      alert('error')
       console.log(response)
-      alert(JSON.stringify(response))
       return response
     })
   }

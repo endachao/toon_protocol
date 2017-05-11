@@ -30,8 +30,7 @@
     <button type="button" class="btn btn-info btn-lg btn-block" v-on:click="sendRequest">尝试一下</button>
 
     <div class="response">
-      {{protocolParam.protocol}}
-      {{ response }}
+      <pre>{{ response }}</pre>
     </div>
 
   </div>
@@ -44,17 +43,17 @@
     name: 'InfoComponent',
     data () {
       return {
-        response: ''
+        response: '响应'
       }
     },
     props: ['protocolParam'],
     methods: {
       sendRequest: function () {
-        var protocol = new ToonProtocol(this.protocolParam.protocol, this.protocolParam.params)
-        console.log(protocol)
-
+        this.response = '请求数据中...'
+        let protocol = new ToonProtocol(this.protocolParam.protocol, this.protocolParam.params)
         protocol.send()
           .then((res) => {
+            this.response = res
             console.log('res', res)
           })
       }
@@ -64,12 +63,12 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .response {
+  pre {
     border: 1px solid #ddd;
     margin-top: 20px;
     margin-bottom: 20px;
     min-height: 40px;
-    padding-top: 5px;
+    padding-top: 10px;
     background-color: #0f0f0f;
     color: #ffffff;
     padding-left: 5px;
