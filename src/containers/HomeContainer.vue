@@ -1,6 +1,6 @@
 <template>
   <div class="HomeContainer">
-    <HomeComponent :buttonList="homeList"/>
+    <HomeComponent :buttonList="homeList" infoTitle='Toon 协议模块列表'/>
   </div>
 </template>
 
@@ -16,7 +16,7 @@
           route: {name: 'wap'}
         },
         {
-          name: '名片列表',
+          name: '选择名片',
           route: {name: 'card'}
         },
         {

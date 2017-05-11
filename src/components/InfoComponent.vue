@@ -30,7 +30,7 @@
     <button type="button" class="btn btn-info btn-lg btn-block" v-on:click="sendRequest">尝试一下</button>
 
     <div class="response">
-      <pre>{{ response }}</pre>
+      <pre class="pre">{{ response }}</pre>
     </div>
 
   </div>
@@ -63,7 +63,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  pre {
+  .pre {
     border: 1px solid #ddd;
     margin-top: 20px;
     margin-bottom: 20px;

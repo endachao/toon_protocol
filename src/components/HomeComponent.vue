@@ -3,7 +3,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h3>Toon 协议模块列表</h3>
+        <h3>{{ infoTitle }}</h3>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
     data () {
       return {}
     },
-    props: ['buttonList']
+    props: ['buttonList', 'infoTitle']
   }
 
 </script>
