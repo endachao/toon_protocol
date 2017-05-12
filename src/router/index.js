@@ -13,6 +13,8 @@ import NetworkContainer from '../containers/NetworkContainer.vue'
 import PhotoContainer from '../containers/PhotoContainer.vue'
 import VibrateContainer from '../containers/VibrateContainer.vue'
 
+import RegisterContainer from '../containers/RegisterContainer.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -61,6 +63,11 @@ export default new Router({
       path: '/vibrate',
       name: 'vibrate',
       component: VibrateContainer
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: RegisterContainer
     }
   ]
 })
