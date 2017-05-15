@@ -18,7 +18,7 @@
     methods: {
       register: function () {
         console.log(encodeURIComponent(tools.getQueryStringByName('key')))
-        window.location.href = 'http://localhost:3000/auth?key=' + encodeURIComponent(tools.getQueryStringByName('key'))
+        window.location.href = 'http://localhost:3000/auth/code?key=' + encodeURIComponent(tools.getQueryStringByName('key'))
       }
     }
   }
