@@ -10,5 +10,6 @@ export default {
       return ''
     }
     return result[1]
-  }
+  },
+  server_uri: '172.31.244.31:3000'
 }

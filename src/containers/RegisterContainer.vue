@@ -20,7 +20,7 @@
       register: function () {
         console.log(tools.getQueryStringByName(href, 'key'))
         console.log(encodeURIComponent(tools.getQueryStringByName(href, 'key')))
-        window.location.href = 'http://172.31.244.31:3000/auth/code?key=' + encodeURIComponent(tools.getQueryStringByName(href, 'key'))
+        window.location.href = `http://${tools.server_uri}/auth/code?key=` + encodeURIComponent(tools.getQueryStringByName(href, 'key'))
       }
     }
   }
