@@ -8,6 +8,7 @@
 </template>
 
 <script>
+  let href = location.href
   import tools from '../helpers/tools'
   export default {
     name: 'RegisterContainer',
@@ -17,8 +18,9 @@
     components: {},
     methods: {
       register: function () {
-        console.log(encodeURIComponent(tools.getQueryStringByName('key')))
-        window.location.href = 'http://localhost:3000/auth/code?key=' + encodeURIComponent(tools.getQueryStringByName('key'))
+        console.log(tools.getQueryStringByName(href, 'key'))
+        console.log(encodeURIComponent(tools.getQueryStringByName(href, 'key')))
+        window.location.href = 'http://172.31.244.31:3000/auth/code?key=' + encodeURIComponent(tools.getQueryStringByName(href, 'key'))
       }
     }
   }
